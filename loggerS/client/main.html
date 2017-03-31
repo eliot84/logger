@@ -1,0 +1,45 @@
+
+
+<template name="main">
+Welcome, {{youare}}
+{{> navigation}}
+</template>
+
+
+<template name="register">
+<h2>Register</h2>
+<form class="register">
+  <p>Email: <input type="email" name="email"></p>
+    <p>First Name: <input type="firstName" name="firstName"></p>
+      <p>Last Name: <input type="lastName" name="lastName"></p>
+  <p>Password: <input type="password" name="password"></p>
+  <P><input type="submit" value="Register"></P>
+  </form>
+</template>
+
+
+<template name="navigation">
+
+{{#if currentUser}}
+    <li><a href="#" class="logout">Logout</a></li>
+{{else}}
+    {{> login}}
+{{/if}}
+
+
+</template>
+
+
+<template name="login">
+<h2>Login</h2>
+  <form class="login">
+    <p>Email: <input type="email" name="email"></p>
+    <p>Password: <input type="password" name="password"></p>
+    <p><input type="submit" value="Login"></p>
+    <a href="{{pathFor route='registration'}}">Register</a>
+  </form>
+</template>
+
+<template name="boom">
+Boom chacalaca
+</template>
